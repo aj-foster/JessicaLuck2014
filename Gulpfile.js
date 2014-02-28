@@ -59,7 +59,7 @@ gulp.task('script', function () {
 gulp.task('styles', function () {
 
 	return gulp.src(paths.stylesMain)
-		.pipe(sass())
+		.pipe(sass({style: "compressed"}))
 		.on('error', gutil.log)
 		.on('error', gutil.beep)
 		.pipe(filter('style.css'))
