@@ -1,0 +1,36 @@
+{
+  "name": "JessicaLuck2014",
+  "version": "1.0.0",
+  "description": "Campaign website for Jessica and Luck",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:aj-foster/JessicaLuck2014.git"
+  },
+  "author": "AJ Foster and JP Costallos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aj-foster/JessicaLuck2014/issues"
+  },
+  "homepage": "https://github.com/aj-foster/JessicaLuck2014",
+  "devDependencies": {
+    "gulp": "~3.5.2",
+    "gulp-watch": "~0.5.0",
+    "gulp-uglify": "~0.2.1",
+    "gulp-concat": "~2.1.7",
+    "gulp-jshint": "~1.4.0",
+    "gulp-coffee": "~1.4.1",
+    "gulp-livereload": "~1.1.1",
+    "gulp-sass": "~0.6.0",
+    "gulp-load-plugins": "~0.3.0",
+    "gulp-autoprefixer": "0.0.6",
+    "gulp-ruby-sass": "~0.3.0",
+    "gulp-util": "~2.2.14",
+    "gulp-exec": "~1.0.4",
+    "gulp-plumber": "~0.5.6",
+    "gulp-filter": "~0.2.1"
+  }
+}
