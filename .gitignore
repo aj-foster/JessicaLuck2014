@@ -1,4 +1,6 @@
 js/*.js
+*.js
+index.php
 .DS_Store
 .sass-cache/
 style.css
