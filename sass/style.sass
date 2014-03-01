@@ -4,14 +4,82 @@
 @import 'bourbon/bourbon'
 @import 'neat/neat'
 
+
+body
+
+	font-family: $typeface 
+
+
 header, section, footer
 	
 	border: 1px solid black
 	margin: 1em 0
 	padding: 1em 0
+	
+
+.constraint
+
 	@include outer-container
 	
+
+.logo-container
+	
+	@include span-columns(4)
+	
+
 .logo
 	
+	background-image: url(rsc/logo.png)
+	background-image: url(data:image/svg+xml;base64,#{$logo})
+	background-position: center 
+	background-repeat: no-repeat
+	-webkit-background-size: 100% 
+	-o-background-size: 100% 
+	background-size: 100% 
+	height: 0
+	line-height: 0
+	padding-top: (1 / 1.41) * 100%
+	text-indent: -9999px 
+	width: 100%
+	
+
+nav
+	
 	border: 1px solid black
-	@include span-columns(5)
+	text-align: center
+	
+	li
+
+		display: inline-block
+		position: relative
+		vertical-align: middle
+		
+		&:active, &:focus, &:hover
+			
+			i
+				left: 10px
+		
+	a
+	
+		font-size: 1.5em 
+		padding: 1em 1.5em
+		text-decoration: none
+				
+	i
+		
+		display: block
+		font-size: 1.6em 
+		font-style: normal
+		line-height: 1.25em 
+		margin: auto
+		
+		position: absolute
+		left: 0
+		top: 0
+		bottom: 0
+		
+		-webkit-transition: left 0.5s
+		-moz-transition: left 0.5s
+		-ms-transition: left 0.5s
+		-o-transition: left 0.5s
+		transition: left 0.5s
