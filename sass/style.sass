@@ -1,1 +1,17 @@
 @import normalize
+@import variables
+
+@import 'bourbon/bourbon'
+@import 'neat/neat'
+
+header, section, footer
+	
+	border: 1px solid black
+	margin: 1em 0
+	padding: 1em 0
+	@include outer-container
+	
+.logo
+	
+	border: 1px solid black
+	@include span-columns(5)
