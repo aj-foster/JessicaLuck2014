@@ -6,15 +6,31 @@
 		%title Jessica Luck 2014
 		%link{:rel => "stylesheet", :href => "style.css"}/ 
 		%script{:type => "text/javascript", :src => "main.min.js"}
+		<script type="text/javascript" src="http://use.typekit.net/wok3thi.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 	%body 
 		.main
-			%header 
-				.logo
+			%header
+				.constraint
+					.logo-container
+						.logo Jessica and Luck 2014
+
+				%nav
+					%ul.constraint
+						%li
+							%a{:href => "#about"} About the Candidates
+							%i &raquo;
+						%li
+							%a{:href => "#platform"} Your Platform
+							%i &raquo;
+						%li
+							%a{:href => "#support"} Support Us
+							%i &raquo;
 
 			%section.about 
-				%article.jessica 
-				%article.luck 
+				%article.jessica
+				%article.luck
 
 			%section.platform 
 				%article.campus 
