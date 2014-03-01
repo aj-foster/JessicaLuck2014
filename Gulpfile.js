@@ -6,6 +6,7 @@ var exec = require('gulp-exec');
 var filter = require('gulp-filter');
 var gutil = require('gulp-util');
 var haml = require('gulp-ruby-haml');
+var livereload = require('gulp-livereload');
 var plumber = require('gulp-plumber');
 var sass = require('gulp-ruby-sass');
 var rename = require('gulp-rename');
@@ -17,7 +18,9 @@ var paths = {
 	haml: ['haml/*.haml'],
 	script: ['js/*.js'],
 	styles: ['sass/**/*.sass', 'sass/**/*.scss', 'sass/**/*.css'],
-	stylesMain: ['sass/style.sass']
+	stylesMain: ['sass/style.sass'],
+
+	outputs: ['*.php', 'style.css', 'main.min.js']
 };
 
 gulp.task('init', function () {
@@ -73,6 +76,13 @@ gulp.task('watch', function () {
 	gulp.watch(paths.haml, ['haml']);
 	gulp.watch(paths.script, ['script']);
 	gulp.watch(paths.styles, ['styles']);
+
+	var server = livereload();
+
+	gulp.watch(paths.outputs)
+		.on('change', function (file) {
+			server.changed(file.path);
+		});
 });
 
 gulp.task('default', ['init', 'watch']);
