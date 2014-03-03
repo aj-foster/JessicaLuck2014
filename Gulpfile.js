@@ -35,7 +35,7 @@ gulp.task('coffee', function () {
 		.pipe(coffee())
 		.on('error', gutil.log)
 		.on('error', gutil.beep)
-		.pipe(gulp.dest('js/compiled.js'));
+		.pipe(gulp.dest('js'));
 });
 
 gulp.task('haml', function () {
@@ -51,11 +51,10 @@ gulp.task('haml', function () {
 gulp.task('script', function () {
 
 	return gulp.src(paths.script)
-		.pipe(uglify())
 		.pipe(concat('main.min.js'))
+		.pipe(uglify())
 		.on('error', gutil.log)
 		.on('error', gutil.beep)
-		.pipe(filter('main.min.js'))
 		.pipe(gulp.dest(''));
 });
 
@@ -72,10 +71,18 @@ gulp.task('styles', function () {
 
 gulp.task('watch', function () {
 
-	gulp.watch(paths.coffee, ['coffee']);
-	gulp.watch(paths.haml, ['haml']);
-	gulp.watch(paths.script, ['script']);
-	gulp.watch(paths.styles, ['styles']);
+	gulp.watch(paths.coffee, ['coffee'])
+		.on('error', gutil.log)
+		.on('error', gutil.beep);
+	gulp.watch(paths.haml, ['haml'])
+		.on('error', gutil.log)
+		.on('error', gutil.beep);
+	gulp.watch(paths.script, ['script'])
+		.on('error', gutil.log)
+		.on('error', gutil.beep);
+	gulp.watch(paths.styles, ['styles'])
+		.on('error', gutil.log)
+		.on('error', gutil.beep);
 
 	var server = livereload();
 
