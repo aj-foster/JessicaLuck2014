@@ -83,3 +83,74 @@ nav
 		-ms-transition: left 0.5s
 		-o-transition: left 0.5s
 		transition: left 0.5s
+		
+
+section.about
+
+	@include outer-container
+	@include row(table)
+		
+	article
+	
+		@include span-columns(6)
+		@include pad
+		
+	.picture
+
+		text-align: center
+		
+	img
+		
+		-webkit-border-radius: 1em 
+		border-radius: 1em
+		
+		width: 100%
+		max-width: 250px
+		
+	.caption
+
+		display: block
+		font-weight: bold
+		letter-spacing: 0.5px
+		
+	h3
+
+		text-align: center
+		
+	.involvement
+
+		background-color: #FFF
+		max-width: 600px
+		overflow: scroll
+		padding: 1em 2em
+		position: relative
+		width: 100%
+		
+		h4
+
+			margin-bottom: 0
+			
+		li
+
+			line-height: 1.25
+			
+		.closeButton
+			
+			cursor: pointer
+			z-index: 11001 
+
+			position: absolute
+			top: 0
+			right: 5px
+		
+
+#lean_overlay
+
+	position: fixed
+	z-index: 100
+	top: 0px
+	left: 0px
+	height: 100%
+	width: 100%
+	background: #000
+	display: none

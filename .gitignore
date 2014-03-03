@@ -1,4 +1,4 @@
-js/*.js
+js/main.js
 *.js
 index.php
 .DS_Store
