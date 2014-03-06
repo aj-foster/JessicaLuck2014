@@ -1,0 +1,95 @@
+section.about
+		
+	article
+		
+		background-color: #eeeeee
+		border: 1px solid #C0C0C0
+		margin: 1em auto
+		width: 100%
+		max-width: 700px
+		@include pad
+		@include clearfix
+		
+		&:nth-child(2n) .picture
+			
+			float: left
+			margin-right: 1em 
+		
+		&:nth-child(2n+1) .picture
+			
+			float: right
+			margin-left: 1em 
+
+	.picture
+
+		text-align: center
+		
+	img
+		
+		-webkit-border-radius: 1em 
+		border-radius: 1em
+		
+		width: 100%
+		max-width: 250px
+		
+	.caption
+
+		display: block
+		font-weight: bold
+		letter-spacing: 0.5px
+		
+	h3
+		
+		margin-bottom: 0 
+		text-align: center
+
+	h4
+		
+		margin-top: 0 
+		text-align: center
+		
+	h5
+
+		font-size: 1em
+		margin-bottom: 0
+		
+	.links
+
+		text-align: center
+		
+		a
+
+			display: block
+			font-size: 1.25em 
+		
+	.bio
+
+		background-color: #FFF
+		max-width: 600px
+		overflow: scroll
+		padding: 1em 2em
+		position: relative
+		width: 100%
+		
+		// Smooth scrolling in the lightbox
+		-webkit-overflow-scrolling: touch
+		
+	.involvement
+
+		background-color: #FFF
+		max-width: 600px
+		overflow: scroll
+		padding: 1em 2em
+		position: relative
+		width: 100%
+		
+		// Smooth scrolling in the lightbox
+		-webkit-overflow-scrolling: touch
+		
+		h4
+
+			margin-bottom: 0
+			
+		li
+
+			line-height: 1.25
