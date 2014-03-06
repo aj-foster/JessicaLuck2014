@@ -58,7 +58,7 @@ $(document).ready ->
 	$("#support form").submit (evt) ->
 
 		evt.preventDefault()
-		$(@).find("p.alert, p.success").remove()
+		$(@).find("p.alert, p.success").fadeOut().remove()
 		form = $(@)
 		target = $(@).children(":first")
 
@@ -70,6 +70,8 @@ $(document).ready ->
 			data: form.serialize()
 			success: (data) ->
 				target.prepend("<p class='success'>" + data + "</p>")
+				$("p.success").fadeIn 200
 				form[0].reset()
 			error: (jqXHR, textStatus, errorThrown) ->
 				target.prepend("<p class='alert'>" + jqXHR.responseText + "</p>")
+				$("p.alert").fadeIn 200
