@@ -92,8 +92,7 @@ header
 
 .logo
 	
-	background-image: url(rsc/logo.png)
-	background-image: url(data:image/svg+xml;base64,#{$logo})
+	background-image: url(data:image/svg+xml;base64,#{$logo}), none
 	background-position: center 
 	background-repeat: no-repeat
 	-webkit-background-size: 100% 
@@ -106,6 +105,10 @@ header
 	text-indent: -9999px 
 	width: 100%
 	
+	// Darn IE 8
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='rsc/logo.png',sizingMethod='scale')
+	// -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='rsc/logo.png',sizingMethod='scale')"
+
 
 .socials
 	
@@ -123,27 +126,27 @@ header
 	.facebook
 		
 		background-image: url(rsc/facebook.png)
-		background-image: url(data:image/svg+xml;base64,#{$facebook})
+		background-image: url(data:image/svg+xml;base64,#{$facebook}), none
 	
 	.instagram
 		
 		background-image: url(rsc/instagram.png)
-		background-image: url(data:image/svg+xml;base64,#{$instagram})
+		background-image: url(data:image/svg+xml;base64,#{$instagram}), none
 	
 	.tumblr
 		
 		background-image: url(rsc/tumblr.png)
-		background-image: url(data:image/svg+xml;base64,#{$tumblr})
+		background-image: url(data:image/svg+xml;base64,#{$tumblr}), none
 	
 	.twitter
 		
 		background-image: url(rsc/twitter.png)
-		background-image: url(data:image/svg+xml;base64,#{$twitter})
+		background-image: url(data:image/svg+xml;base64,#{$twitter}), none
 	
 
 .main-img
 
-	background: url(rsc/main2.jpg) center no-repeat
+	background: url(rsc/main3.jpg) center no-repeat
 	height: 400px
 	
 	@include span-columns(8)
