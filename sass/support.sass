@@ -16,9 +16,7 @@ section.support
 		
 	input[type="submit"]
 		
-		// background-color: $white 
-		background-image: -moz-linear-gradient(to bottom, $gold, darken($gold, 5%))
-		background-image: linear-gradient(to bottom, $gold, darken($gold, 5%))
+		@include linear-gradient(to bottom, $gold, darken($gold, 5%), $fallback: $gold)
 		border: 0px none
 		-webkit-border-radius: 4px 
 		border-radius: 4px 
@@ -31,18 +29,19 @@ section.support
 
 		color: $alert
 		
+	.success, .alert
+	
+		-webkit-border-radius: 4px 
+		border-radius: 4px
+		display: none
+		text-align: center
+		
 	.success
 		
 		background-color: lighten($success, 50%)
 		border: 2px solid $success
-		-webkit-border-radius: 4px 
-		border-radius: 4px 
-		text-align: center
 		
 	.alert
 		
 		background-color: lighten($alert, 20%)
 		border: 2px solid $alert
-		-webkit-border-radius: 4px 
-		border-radius: 4px 
-		text-align: center
