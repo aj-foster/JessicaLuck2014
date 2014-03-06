@@ -26,7 +26,6 @@
     "gulp-livereload": "~1.1.1",
     "gulp-sass": "~0.6.0",
     "gulp-load-plugins": "~0.3.0",
-    "gulp-autoprefixer": "0.0.6",
     "gulp-ruby-sass": "~0.3.0",
     "gulp-util": "~2.2.14",
     "gulp-exec": "~1.0.4",
