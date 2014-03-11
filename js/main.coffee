@@ -45,14 +45,35 @@ $(document).ready ->
 	$(window).on "scroll", stickyNav
 
 
-	$("fieldset.more").hide()
+	$("#platform .points").hide()
+	$("#platform a.title").on "click", (evt) ->
 
-	$("#support-form-more").on "change", (evt) ->
+		$(@).parent().children(".points").slideToggle()
+		evt.preventDefault()
+
+
+	$("fieldset.suggest, fieldset.support, fieldset.join").hide()
+
+	$("#support-check-suggest").on "change", (evt) ->
 
 		if $(@).prop("checked")
-			$("fieldset.more").slideDown()
+			$("fieldset.suggest").slideDown()
 		else
-			$("fieldset.more").slideUp()
+			$("fieldset.suggest").slideUp()
+
+	$("#support-check-support").on "change", (evt) ->
+
+		if $(@).prop("checked")
+			$("fieldset.support").slideDown()
+		else
+			$("fieldset.support").slideUp()
+
+	$("#support-check-join").on "change", (evt) ->
+
+		if $(@).prop("checked")
+			$("fieldset.join").slideDown()
+		else
+			$("fieldset.join").slideUp()
 
 
 	$("#support form").submit (evt) ->
@@ -62,12 +83,13 @@ $(document).ready ->
 		form = $(@)
 		target = $(@).children(":first")
 
-		console.log form.serialize()
+		formData = new FormData($("#support-form")[0])
 
 		$.ajax 'handler.php',
 			type: 'POST'
-			dataType: 'html'
-			data: form.serialize()
+			processData: false
+			contentType: false
+			data: formData
 			success: (data) ->
 				target.prepend("<p class='success'>" + data + "</p>")
 				$("p.success").fadeIn 200
