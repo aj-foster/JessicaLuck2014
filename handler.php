@@ -4,7 +4,9 @@ $password = trim(file_get_contents("secret.txt"));
 $mysqli = new mysqli("localhost", "services", $password, "jessicaluck2014");
 
 
-if ($_POST['support-check-suggest'] != "Yes" && $_POST['support-check-support'] != "Yes") {
+if ( (!isset($_POST['support-check-suggest']) || $_POST['support-check-suggest'] != "Yes")
+	&& !isset($_POST['support-check-support']) || $_POST['support-check-support'] != "Yes") {
+
 	http_response_code(406);
 	die("Please choose an action");
 }
@@ -13,7 +15,7 @@ $suggest = null;
 $support = null;
 
 
-if ($_POST['support-check-suggest'] == "Yes") {
+if (isset($_POST['support-check-suggest']) && $_POST['support-check-suggest'] == "Yes") {
 
 	if (!isset($_POST['support-form-suggest']) || $_POST['support-form-suggest'] == "") {
 		http_response_code(406);
@@ -25,7 +27,7 @@ if ($_POST['support-check-suggest'] == "Yes") {
 }
 
 
-if ($_POST['support-check-support'] == "Yes") {
+if (isset($_POST['support-check-support']) && $_POST['support-check-support'] == "Yes") {
 
 	if (!isset($_POST['support-form-name']) || $_POST['support-form-name'] == "") {
 		http_response_code(406);
@@ -110,7 +112,7 @@ if ($_FILES["support-form-picture"]["name"] != "") {
 
 	else {
 		http_response_code(406);
-		die("Error: Invalid file");
+		die("Error: Invalid file, or too large (< 5mb).");
 	}
 }
 
