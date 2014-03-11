@@ -58,11 +58,12 @@ $name = $mysqli->real_escape_string($_POST['support-form-name']);
 $email = $mysqli->real_escape_string($_POST['support-form-email']);
 $organization = $mysqli->real_escape_string($_POST['support-form-org']);
 $more = ($_POST['support-check-join'] == "Yes") ? 1 : 0;
+$picture = ($_FILES["support-form-picture"]["name"] != "") ? 1 : 0;
 
 
 if (!$mysqli->query("INSERT INTO supporters VALUES (NULL, '" . $name . "', '" .
 					$email . "', '" . $organization . "', " . $more . ", '" .
-					$support . "', '" . $suggest . "')")) {
+					$support . "', '" . $suggest . "', " . $picture . ")")) {
 	http_response_code(406);
 	die("There was an error while recording your information.");
 }
