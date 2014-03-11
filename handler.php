@@ -4,25 +4,17 @@ $password = file_get_contents("secret.txt");
 $mysqli = new mysqli("localhost", "services", $password, "jessicaluck2014");
 
 
-if (!isset($_POST['support-form-name']) || $_POST['support-form-name'] == "") {
+if ($_POST['support-check-suggest'] != "Yes" && $_POST['support-check-support'] != "Yes") {
 	http_response_code(406);
-	die("Please provide your name");
-}
-
-if (!isset($_POST['support-form-email']) || $_POST['support-form-email'] == "") {
-	http_response_code(406);
-	die("Please provide your e-mail");
-}
-
-if (!filter_var($_POST['support-form-email'], FILTER_VALIDATE_EMAIL)) {
-	http_response_code(406);
-	die("Please provide a valid e-mail address.");
+	die("Please choose an action");
 }
 
 $suggest = null;
 $support = null;
 
+
 if ($_POST['support-check-suggest'] == "Yes") {
+
 	if (!isset($_POST['support-form-suggest']) || $_POST['support-form-suggest'] == "") {
 		http_response_code(406);
 		die("What is your suggestion?");
@@ -32,23 +24,45 @@ if ($_POST['support-check-suggest'] == "Yes") {
 		$suggest = $mysqli->real_escape_string($_POST['support-form-suggest']);
 }
 
-if ($_POST['support-check-join'] == "Yes") {
-	if (!isset($_POST['support-form-join']) || $_POST['support-form-join'] == "") {
+
+if ($_POST['support-check-support'] == "Yes") {
+
+	if (!isset($_POST['support-form-name']) || $_POST['support-form-name'] == "") {
 		http_response_code(406);
-		die("How would you like to help out?");
+		die("Please provide your name");
 	}
 
-	else
-		$support = $mysqli->real_escape_string($_POST['support-form-join']);
+	if (!isset($_POST['support-form-email']) || $_POST['support-form-email'] == "") {
+		http_response_code(406);
+		die("Please provide your e-mail");
+	}
+
+	if (!filter_var($_POST['support-form-email'], FILTER_VALIDATE_EMAIL)) {
+		http_response_code(406);
+		die("Please provide a valid e-mail address.");
+	}
+
+	if ($_POST['support-check-join'] == "Yes") {
+		if (!isset($_POST['support-form-join']) || $_POST['support-form-join'] == "") {
+			http_response_code(406);
+			die("How would you like to help out?");
+		}
+
+		else
+			$support = $mysqli->real_escape_string($_POST['support-form-join']);
+	}
 }
 
 
 $name = $mysqli->real_escape_string($_POST['support-form-name']);
 $email = $mysqli->real_escape_string($_POST['support-form-email']);
 $organization = $mysqli->real_escape_string($_POST['support-form-org']);
+$more = ($_POST['support-check-join'] == "Yes") ? 1 : 0;
 
 
-if (!$mysqli->query("INSERT INTO supporters VALUES ()")) {
+if (!$mysqli->query("INSERT INTO supporters VALUES (NULL, '" . $name . "', '" .
+					$email . "', '" . $organization . "', " . $more . ", '" .
+					$support . "', '" . $suggest . "')")) {
 	http_response_code(406);
 	die("There was an error while recording your information.");
 }
