@@ -2,38 +2,75 @@ section.platform
 		
 	article
 		
+		background-color: #eeeeee
+		border: 1px solid #C0C0C0
+		margin: 1em auto
+		max-width: 700px
+		
+		@include pad
+		@include clearfix
+		
+	.title
+		
+		display: table
+		margin: auto
+		padding-right: 1em
+		width: auto
+
+		@include clearfix
+		
+	a
+
+		color: #000000
+		
+		&:active, &:focus, &:hover
+			outline: none
+		
+	h3
+		
 		float: left
-		text-align: center
-		width: 20%
+		padding-top: 5px 
+		
+	span
+
+		font-size: 0.75em 
 
 	.badge
 		
-		background-position: center
+		background-position: center top
 		background-repeat: no-repeat
-		height: 100px
-		width: 100%
-	
-	.academics .badge
-		
-		background-image: url(rsc/academics.png)
-		background-image: url(data:image/svg+xml;base64,#{$academics}), none
-	
-	.campus .badge
-		
-		background-image: url(rsc/campus.png)
-		background-image: url(data:image/svg+xml;base64,#{$campus}), none
+		float: left
+		font-weight: 700
+		margin-right: 0.5em 
+		padding-top: 100px
+		text-align: center
+		width: 100px
 	
 	.community .badge
 		
 		background-image: url(rsc/community.png)
 		background-image: url(data:image/svg+xml;base64,#{$community}), none
 	
-	.safety .badge
+	.experience .badge
 		
-		background-image: url(rsc/safety.png)
-		background-image: url(data:image/svg+xml;base64,#{$safety}), none
+		background-image: url(rsc/experience.png)
+		background-image: url(data:image/svg+xml;base64,#{$experience}), none
 	
-	.sga .badge
+	.involve .badge
 		
-		background-image: url(rsc/sga.png)
-		background-image: url(data:image/svg+xml;base64,#{$sga}), none
+		background-image: url(rsc/involvement.png)
+		background-image: url(data:image/svg+xml;base64,#{$involvement}), none
+	
+	.leadership .badge
+		
+		background-image: url(rsc/leadership.png)
+		background-image: url(data:image/svg+xml;base64,#{$leadership}), none
+	
+	.services .badge
+		
+		background-image: url(rsc/services.png)
+		background-image: url(data:image/svg+xml;base64,#{$services}), none
+		
+	.points
+
+		clear: both
