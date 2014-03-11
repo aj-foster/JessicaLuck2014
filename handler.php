@@ -4,7 +4,7 @@ $password = trim(file_get_contents("secret.txt"));
 $mysqli = new mysqli("localhost", "services", $password, "jessicaluck2014");
 
 
-if ( (!isset($_POST['support-check-suggest']) && !isset($_POST['support-check-support'])) {
+if (!isset($_POST['support-check-suggest']) && !isset($_POST['support-check-support'])) {
 
 	http_response_code(406);
 	die("Please choose an action");
