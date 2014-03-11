@@ -76,14 +76,21 @@ $(document).ready ->
 			$("fieldset.join").slideUp()
 
 
+	if window.FormData == undefined
+		$("#support-form-picture").replaceWith("<p>Bummer! Picture uploads aren't supported in your browser.</p>")
+
 	$("#support form").submit (evt) ->
 
 		evt.preventDefault()
 		$(@).find("p.alert, p.success").fadeOut().remove()
 		form = $(@)
 		target = $(@).children(":first")
+		formData = null
 
-		formData = new FormData($("#support-form")[0])
+		if window.FormData == undefined
+			formData = $("#support-form").serialize()
+		else
+			formData = new FormData($("#support-form")[0])
 
 		$.ajax 'handler.php',
 			type: 'POST'
