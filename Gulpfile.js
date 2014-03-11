@@ -93,3 +93,4 @@ gulp.task('watch', function () {
 });
 
 gulp.task('default', ['init', 'watch']);
+gulp.task('deploy', ['init', 'coffee', 'script', 'styles', 'haml']);
