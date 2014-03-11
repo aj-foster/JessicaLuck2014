@@ -12,6 +12,14 @@ $(document).ready ->
 		evt.preventDefault()
 		destination = 0
 
+		if $(@).hasClass("menu")
+
+			$("nav ul").slideToggle()
+			return
+
+		else
+			$("nav ul").slideUp()
+
 		target = @.hash
 		navHeight = $("nav").height()
 		viewportHeight = $(window).height() - navHeight
@@ -43,6 +51,22 @@ $(document).ready ->
 
 	stickyNav()
 	$(window).on "scroll", stickyNav
+
+
+	adjustNav = ->
+
+		navUL = $("nav ul")
+		navLink = $("nav a.menu")
+
+		if $(document).width() < 650
+			navUL.addClass("mobile").removeClass("full").hide()
+			navLink.addClass("mobile").removeClass("full").show()
+		else
+			navUL.addClass("full").removeClass("mobile").show()
+			navLink.addClass("full").removeClass("mobile").hide()
+
+	$(window).resize adjustNav
+	adjustNav()
 
 
 	$("#platform .points").hide()

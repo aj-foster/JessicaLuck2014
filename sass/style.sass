@@ -86,8 +86,19 @@ header
 
 
 .logo-container
+
+	padding-left: 1em 
 	
 	@include span-columns(4)
+	@include clearfix
+	
+	@media screen and (max-width: 640px)
+	
+		float: none
+		margin: auto
+		padding: 0 0 1em 0
+		width: 100%
+		max-width: 300px
 	
 
 .logo
@@ -100,7 +111,7 @@ header
 	background-size: 100% 
 	height: 0
 	line-height: 0
-	margin-top: 2em 
+	margin-top: 10%
 	padding-top: (1 / 1.4) * 100%
 	text-indent: -9999px 
 	width: 100%
@@ -108,7 +119,7 @@ header
 	// Darn IE 8
 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='rsc/logo.png',sizingMethod='scale')
 	// -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='rsc/logo.png',sizingMethod='scale')"
-
+		
 
 .socials
 	
@@ -118,7 +129,7 @@ header
 		background-repeat: no-repeat
 		float: left
 		height: 32px
-		margin-top: 3em
+		margin-top: 10%
 		padding: 0.5em
 		width: 25%
 		min-width: 32px
@@ -142,15 +153,26 @@ header
 		
 		background-image: url(rsc/twitter.png)
 		background-image: url(data:image/svg+xml;base64,#{$twitter}), none
+
+
+.main-img-container
 	
+	@include span-columns(8)
+	
+	@media screen and (max-width: 640px)
+	
+		display: none
+
 
 .main-img
 
 	background: url(rsc/main.jpg) center no-repeat
-	height: 400px
-	
-	@include span-columns(8)
-	
+	-webkit-background-size: 100% 
+	-o-background-size: 100% 
+	background-size: 100% 
+	height: 0
+	padding-top: (400 / 724) * 100%
+		
 
 nav
 	
@@ -160,16 +182,33 @@ nav
 	border: 1px solid $gold
 	text-align: center
 	width: 100%
-	
+
+
 	ul
 		
 		padding: 0
 		@include outer-container
 		@include row (table)
+		
+		&.full
+
+			display: block
+			
+			li
+				display: inline-block
+				width: 33% 
+			
+		&.mobile
+
+			display: none
+			
+			li
+				display: block
+				margin: 0.25em 
+				width: 100%
 	
 	li
 
-		display: inline-block
 		width: 33%
 		
 	a
@@ -198,3 +237,25 @@ nav
 				padding: 0 0 0 0.5em
 			
 		@include transition (background-color 0.5s)
+		
+
+		@media screen and (max-width: 750px)
+		
+			font-size: 1.25em 
+			
+		@media screen and (max-width: 700px)
+		
+			font-size: 1em 
+			
+	a.menu
+		
+		padding: 1em 0 
+		width: 100%
+		
+		&.full
+
+			display: none
+			
+		&.mobile
+
+			display: block

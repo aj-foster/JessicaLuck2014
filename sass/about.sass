@@ -18,11 +18,15 @@ section.about
 		&.luck .picture
 			
 			float: right
-			margin-left: 1em 
+			margin-left: 1em
 
 	.picture
 
 		text-align: center
+		
+		@media screen and (max-width: 550px)
+		
+			width: 100%
 		
 	img
 		
@@ -32,11 +36,19 @@ section.about
 		width: 100%
 		max-width: 250px
 		
+		@media screen and (max-width: 600px)
+			
+			max-width: 200px
+		
 	.caption
 
 		display: block
 		font-weight: bold
 		letter-spacing: 0.5px
+		
+		@media screen and (max-width: 550px)
+		
+			display: none
 		
 	h3
 		
