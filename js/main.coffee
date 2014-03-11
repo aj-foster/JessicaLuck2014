@@ -18,10 +18,15 @@ $(document).ready ->
 			return
 
 		else
-			$("nav ul").slideUp()
+			$("nav ul.mobile").slideUp()
 
 		target = @.hash
-		navHeight = $("nav").height()
+
+		if $("a.menu.mobile").height() == undefined
+			navHeight = $("nav").height()
+		else
+			navHeight = $("a.menu.mobile").height() + 25
+
 		viewportHeight = $(window).height() - navHeight
 		bottomOfPage = $(document).height() - $(window).height()
 
