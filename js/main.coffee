@@ -101,6 +101,7 @@ $(document).ready ->
 				target.prepend("<p class='success'>" + data + "</p>")
 				$("p.success").fadeIn 200
 				form[0].reset()
+				$("fieldset.suggest, fieldset.support, fieldset.join").hide()
 			error: (jqXHR, textStatus, errorThrown) ->
 				target.prepend("<p class='alert'>" + jqXHR.responseText + "</p>")
 				$("p.alert").fadeIn 200
