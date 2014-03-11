@@ -112,7 +112,7 @@ if ($_FILES["support-form-picture"]["name"] != "") {
 
 	else {
 		http_response_code(406);
-		die("Error: Invalid file, or too large (< 5mb).");
+		die("Error: Invalid file, or too large (>5mb).");
 	}
 }
 
