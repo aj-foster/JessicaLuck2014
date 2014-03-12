@@ -22,7 +22,7 @@ $(document).ready ->
 
 		target = @.hash
 
-		if $("a.menu.mobile").height() == undefined
+		if $("a.menu.mobile").height() == null
 			navHeight = $("nav").height()
 		else
 			navHeight = $("a.menu.mobile").height() + 25
