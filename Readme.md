@@ -6,7 +6,7 @@
 
 ### Overview
 
-**Introduction**: This is a website that was created by AJ Foster for one of the 2014 UCF SGA Presidential candidates.  Because previous campaign websites are often used as starting points for each year's campaign, I elected to make this site's code public in the spirit of the web community.
+**Introduction**: This is a website that was created by AJ Foster for one of the 2014 UCF SGA Presidential candidates.  Because previous campaign websites are often used as starting points for each year's campaign, I elected to make this site's code public in the spirit of the web community.  Most of the files in this project have been lightly commented.
 
 **License**: You are free to look through the code (obviously, since it is posted here) and use it as a reference.  You may not use the site's code in its entirety.  It would be extremely nice to leave a comment in your site's header lending credit if this repository was helpful.
 
