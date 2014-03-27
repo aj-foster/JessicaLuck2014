@@ -33,10 +33,10 @@
 
 **Analytics**: Here's a quick snapshot of the site's usage during the campaign period.
 
-* 1,012 Unique Visitors
+* 1,116 Visitors
 * Highest traffic: 1 day after launch, and during the election days (~150 / day)
-* Highest times: 1pm and 9pm
-* 71% Desktop, 25% Mobile, 4% Tablet
+* Highest times: 2pm and 9pm
+* 70% Desktop, 25% Mobile, 5% Tablet
 * 43% Direct Traffic, 42% Referred from Social Media, 13% Organic Search
 
 **Design**: The layout of the site is very simple, which is good considering how difficult it is to encourage educated voting.  As a whole, the site is quite plain.  Given that (without the video) the site used 9 requests and less than 400kb of bandwidth, we certainly could have afforded to add decorative elements (background images, for example).  While the expansive bios / involvement / platform makes for good reading to someone who cares, we should have focused on the majority of voters who simply don't - easily accessible highlights from each of those sections would have been preferable to most visitors.

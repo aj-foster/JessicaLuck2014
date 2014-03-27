@@ -1,60 +1,62 @@
+// These styles are scoped to the Support section of the page.
+
 section.support
 
 	form
-		
-		background-color: #eeeeee 
+
+		background-color: #eeeeee
 		margin: auto
 		max-width: 500px
-		
+
 	fieldset
 
 		margin: 0
-		
+
 	.basic
 
 		padding-left: 1em
-		
+
 		input[type="checkbox"]
 
 			margin-left: 1em
-		
+
 	input[type="text"], input[type="email"]
 
 		width: 100%
-		
+
 	input[type="submit"]
-		
+
 		@include linear-gradient(to bottom, $gold, darken($gold, 5%), $fallback: $gold)
 		border: 0px none
-		-webkit-border-radius: 4px 
-		border-radius: 4px 
+		-webkit-border-radius: 4px
+		border-radius: 4px
 		display: block
 		height: 2em
 		margin: auto
 		width: 8em
-		
+
 		&:active, &:focus, &:hover
-		
+
 			background-color: darken($gold, 5%)
 			background-image: none
-		
+
 	span
 
 		color: $alert
-		
+
 	.success, .alert
-	
-		-webkit-border-radius: 4px 
+
+		-webkit-border-radius: 4px
 		border-radius: 4px
 		display: none
 		text-align: center
-		
+
 	.success
-		
+
 		background-color: lighten($success, 50%)
 		border: 2px solid $success
-		
+
 	.alert
-		
+
 		background-color: lighten($alert, 20%)
 		border: 2px solid $alert

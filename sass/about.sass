@@ -1,102 +1,119 @@
+// Styles in this file are scoped to "section.about", which is one portion of
+// the page.
+
 section.about
 
+	// One trick for having mobile-friendly youtube embeds involves three
+	// elements: a container, which has a max-width of 100% (so that it
+	// collapses with a small screen size), a div that sets the aspect ratio of
+	// the video using height: 0 and padding-top: (height / width), and the
+	// video itself which is absolutely positioned within that div.
+
 	.video-container
-		
+
 		margin: 0 auto 3em
 		width: 500px
 		max-width: 100%
-		
+
 		@include clearfix
-		
+
 	.video
-		
+
 		height: 0
 		padding-top: 56.25%
 		position: relative
 		width: 100%
-		
+
 	.video iframe
-	
+
 		height: 100%
 		position: absolute
 		top: 0
 		width: 100%
-		z-index: -1 
-		
+		z-index: -1
+
+
+	// Each article in this section is an "about" pane for one of the candidates
+	// and should alternate image positioning.  While it is normally best to use
+	// :nth-child(2n) and :nth-child(2n+1) for this purpose, IE8 does not
+	// support nth-child.  Thus, simple classes "jessica" and "luck" were used
+	// instead.
+
 	article
-		
+
 		background-color: #eeeeee
 		border: 1px solid #C0C0C0
 		margin: 1em auto
 		width: 100%
 		max-width: 700px
+
 		@include pad
 		@include clearfix
-		
+
 		&.jessica .picture
-			
+
 			float: left
-			margin-right: 1em 
-	
+			margin-right: 1em
+
 		&.luck .picture
-			
+
 			float: right
 			margin-left: 1em
 
 	.picture
 
 		text-align: center
-		
+
 		@media screen and (max-width: 550px)
-		
+
 			width: 100%
-		
+
 	img
-		
-		-webkit-border-radius: 1em 
+
+		-webkit-border-radius: 1em
 		border-radius: 1em
-		
+
 		width: 100%
 		max-width: 250px
-		
+
 		@media screen and (max-width: 600px)
-			
+
 			max-width: 200px
-		
+
 	.caption
 
 		display: block
 		font-weight: bold
 		letter-spacing: 0.5px
-		
+
 		@media screen and (max-width: 550px)
-		
+
 			display: none
-		
+
 	h3
-		
-		margin-bottom: 0 
+
+		margin-bottom: 0
 		text-align: center
 
 	h4
-		
-		margin-top: 0 
+
+		margin-top: 0
 		text-align: center
-		
+
 	h5
 
 		font-size: 1em
 		margin-bottom: 0
-		
+
 	.links
 
 		text-align: center
-		
+
 		a
 
 			display: block
-			font-size: 1.25em 
-		
+			font-size: 1.25em
+
 	.bio
 
 		background-color: #FFF
@@ -105,10 +122,10 @@ section.about
 		padding: 1em 2em
 		position: relative
 		width: 100%
-		
+
 		// Smooth scrolling in the lightbox
 		-webkit-overflow-scrolling: touch
-		
+
 	.involvement
 
 		background-color: #FFF
@@ -117,14 +134,14 @@ section.about
 		padding: 1em 2em
 		position: relative
 		width: 100%
-		
+
 		// Smooth scrolling in the lightbox
 		-webkit-overflow-scrolling: touch
-		
+
 		h4
 
 			margin-bottom: 0
-			
+
 		li
 
 			line-height: 1.25
